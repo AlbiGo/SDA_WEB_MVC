@@ -52,6 +52,25 @@ namespace SDA_WEB_APP_MVC.Controllers
             }
         }
 
+
+        [HttpGet]
+        public async Task<ActionResult> FilterByDescription([FromQuery] string des)
+        {
+            try
+            {
+                var artikujt = StaticData.Artikujt.ToList()
+                   .Where(p => p.Description.Contains(des))
+                   .ToList();
+
+                return View("TableArtikujt", artikujt);
+            }
+            catch(Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+
+            }
+        }
+
         [HttpGet]
         public async Task<ActionResult> FilterByDate([FromQuery] DateTime created)
         {
