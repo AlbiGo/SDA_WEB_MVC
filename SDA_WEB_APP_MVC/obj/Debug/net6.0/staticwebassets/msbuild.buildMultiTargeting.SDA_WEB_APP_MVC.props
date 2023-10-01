@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\SDA_WEB_APP_MVC.props" />
+</Project>

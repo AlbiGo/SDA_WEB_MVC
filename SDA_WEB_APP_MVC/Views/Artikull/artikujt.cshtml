@@ -1,0 +1,13 @@
+﻿@model List<Artikull>
+<h1>Artikull Katalog</h1>
+@foreach(var a in Model)
+{
+    <div>
+        <p> @a.ID </p>
+        <p> @a.Name</p>
+        <p> @a.Description</p>
+        <p> @a.DateCreated</p>
+        <img src="@a.PhotoUrl">
+    </div>
+
+}
