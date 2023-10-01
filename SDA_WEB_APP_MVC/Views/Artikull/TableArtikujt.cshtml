@@ -1,0 +1,52 @@
+﻿@model List<Artikull>
+
+<div>
+    <table class=" table table-dark"">
+        <th>
+            <td>
+                Number
+            <td>
+                ID
+            </td>
+            <td>
+                Name
+            </td>
+            <td>
+                Description
+            </td>
+            <td>
+                Created
+            </td>
+            <td>
+                Actions
+            </td>
+        </th>
+        @foreach (var a in Model)
+        {
+            <tr>
+                <td>
+
+                </td>
+                <td>
+
+                </td>
+                <td>
+                   @a.ID
+                </td>
+                <td>
+                    @a.Name
+                </td>
+                <td>
+                    @a.Description
+                </td>
+                <td>
+                    @a.DateCreated
+                </td>
+                <td>
+                    @Html.ActionLink("Get Details","GetByID", "Artikull",new {id = a.ID} )
+                    @Html.ActionLink("Get Details by name","GetByName", "Artikull", new {name = a.Name} )           
+                </td>
+            </tr>
+        }
+    </table>
+</div>

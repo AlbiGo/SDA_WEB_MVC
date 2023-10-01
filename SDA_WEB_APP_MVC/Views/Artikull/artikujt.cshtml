@@ -1,5 +1,6 @@
 ﻿@model List<Artikull>
 <h1>Artikull Katalog</h1>
+@Html.ActionLink("Filter by Date","FilterByDate", "Artikull", new {created = "2023-09-30T10:51:00.515Z"} )
 @foreach(var a in Model)
 {
     <div>
@@ -7,7 +8,8 @@
         <p> @a.Name</p>
         <p> @a.Description</p>
         <p> @a.DateCreated</p>
-        <img src="@a.PhotoUrl">
+        <img src="@Url.Content(@a.PhotoUrl)">
+        @Html.ActionLink("Get Details","GetByID", "Artikull",new {id = a.ID} )
+        @Html.ActionLink("Get Details by name","GetByName", "Artikull", new {name = a.Name} )
     </div>
-
 }
