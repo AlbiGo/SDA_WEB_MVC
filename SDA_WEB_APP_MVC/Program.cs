@@ -1,10 +1,15 @@
 using Microsoft.Extensions.FileProviders;
+using SDA_WEB_APP_MVC.BusinessLayer.Iterfaces;
+using SDA_WEB_APP_MVC.BusinessLayer.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+//Add Services
+//Dependency Injection
+builder.Services.AddScoped(typeof(IArtikullService), typeof(ArtikullService));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
